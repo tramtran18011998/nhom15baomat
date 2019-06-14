@@ -334,7 +334,7 @@
 					</div>
 
 					<div class="col-md-7">
-						<img src="./img/tintuc1.jpg">
+						<img src="./img/hamChicken.jpg">
 
 					</div>
 				</div>
@@ -354,7 +354,7 @@
 							</div>
 
 							<div class="row-md-6 tin3-2">
-								<img src="./img/familychic.png">
+								<img src="./img/3chic.png">
 							</div>
 
 						</div>

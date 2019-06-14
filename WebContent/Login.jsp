@@ -54,7 +54,7 @@
 								<span class="input-group-text"><i class="fa fa-user"></i></span>
 							</div>
 							<input type="text" class="form-control"
-								placeholder="Tên đăng nhập" id="tenDN" name="tenDN" required>
+								placeholder="Tên đăng nhập" maxlength="20" id="tenDN" name="tenDN" required>
 						</div>
 						<div class="input-group mb-3"
 							style="width: 500px; margin-left: 80px;">
@@ -62,7 +62,7 @@
 								<span class="input-group-text"><i class="fa fa-lock"></i></span>
 							</div>
 							<input type="password" class="form-control"
-								placeholder="Mật khẩu" id="mK" name="mK" required>
+								placeholder="Mật khẩu" maxlength="15" id="mK" name="mK" required>
 
 						</div>
 

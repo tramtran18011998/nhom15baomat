@@ -3,19 +3,28 @@ function validateFormDNhap()
 {
     var username = document.getElementById('tenDN').value;
     var password = document.getElementById('mk').value; 
+    var min =3;
+    var maxDN=20;
+    var maxMK=15;
 
     if(username.length==0 && password.length==0){
         alert('Vui lòng nhập thông tin');
     }
-
-    
+   
     else if (username.length==0){
-        alert('Bạn chưa nhập tên đăng nhập');
-    
+        alert('Bạn chưa nhập tên đăng nhập');   
     }
     else if (password == '')
     {
         alert('Bạn chưa nhập mật khẩu');
+    }
+    else if(username.length>maxDN || password.length>maxMK )
+    {
+        alert('Mật khẩu chứa tối đa 15 kí tự, Tên đăng nhập tối đa 20 kí tự !');
+    }
+    else if(username.length<min || password.length<min)
+    {
+        alert('Số kí tự nhập vào phải tối thiểu 3 kí tự !');
     }
     else{
         
@@ -34,6 +43,10 @@ function validateFormDKy()
     var mknhaplai=document.getElementById('MKnhaplai').value;
     var username = document.getElementById('tenDn').value;
     var password = document.getElementById('MK').value;
+    
+    var min =3;
+    var maxDN=20;
+    var maxMK=15;
 
     if(mknhaplai.length > 0 && password.length>0 && mknhaplai != password)
     {
@@ -41,6 +54,10 @@ function validateFormDKy()
     }
     else if(hovaten.length==0 || sdt.length==0 ||dchi.length==0 || mail.length==0 || username.length==0 ){
         alert('Vui lòng nhập đầy đủ thông tin đăng ký');
+    }
+    else if(username.length>maxDN || username.length<min || password.length>maxMK || password.length<min)
+    {
+        alert('Bạn phải nhập Tên đăng nhập trong khoảng [3,20], Mật khẩu [3,15] kí tự');
     }
     else{
         swal({
@@ -71,3 +88,5 @@ function validateQuenMK(){
     }
     
 }
+
+
