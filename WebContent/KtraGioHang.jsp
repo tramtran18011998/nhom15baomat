@@ -131,114 +131,124 @@
 		<div class="container">
 
 
-			<div class="modal fade" id="myModal">
-
-				<div class="modal-dialog modal-dialog-centered ">
-					<div class="modal-content">
-
-
-						<div class="modal-header">
-							<h4 class="modal-title">Đăng Nhập</h4>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-						</div>
+			<form action="/KhachHangServlet/insert" method="post">
+				<div class="modal fade" id="myModal1">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
 
 
-						<div class="modal-body">
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fa fa-user"></i></span>
+							<div class="modal-header">
+								<h4 class="modal-title">Đăng Ký</h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+
+							<div class="modal-body">
+
+								<div class="form-group">
+									<input id="hoTen" name="hoTen" class="form-control" onchange="checkCharacter()"
+										placeholder="Họ và tên" required>
 								</div>
-								<input type="text" class="form-control"
-									placeholder="Tên đăng nhập" id="tenDN" name="username" required>
+
+
+
+								<div class="form-group">
+									<input id="sDt" name="sdt" class="form-control" onchange="checkCharacter()"
+										placeholder="SĐT" required>
+								</div>
+								<div class="form-group">
+									<input id="DChi" name="diaChi" class="form-control" onchange="checkCharacter()"
+										placeholder="Địa chỉ" required>
+								</div>
+								<div class="form-group">
+									<input id="eMail" name="email" class="form-control" onchange="checkCharacter()"
+										placeholder="Email" required>
+								</div>
+								<div class="form-group">
+									<input id="tenDn" name="tenDN" class="form-control" onchange="checkCharacter()"
+										placeholder="Tên đăng nhập" required>
+								</div>
+								<div class="form-group">
+									<input type="password" id="MK" name="mK" class="form-control" onchange="checkCharacter()"
+										placeholder="Mật khẩu" required>
+								</div>
+								<div class="form-group">
+									<input type="password" id="MKnhaplai" name="mK" class="form-control"
+									onchange="ktra()"	placeholder="Nhập lại Mật khẩu" required>
+								</div>
+								
 
 
 							</div>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="fa fa-lock"></i></span>
-								</div>
-								<input type="password" type="text" class="form-control" placeholder="Mật khẩu"
-									id="mk" name="password" required>
 
+
+							<div class="modal-footer">
+								<button type="submit" id="btnDK" class="btn btn-secondary">
+									<i class="fa fa-arrow-right"></i>
+								</button>
 							</div>
+							<script type="text/javascript">
+									function ktra() {
+										if(checkCharacter()==true){
+											enableBtn();
+										}
+										
+										
+										var MK = document
+												.getElementById("MK").value;
+										var MKnhaplai = document
+												.getElementById("MKnhaplai").value;
+										if(MK!=MKnhaplai)
+											{alert('Mật khẩu không đúng');}
+										
+										var hovaten=document.getElementById('hoTen').value;
+									    var sdt=document.getElementById('sDt').value;
+									    var dchi=document.getElementById('DChi').value;
+									    var mail=document.getElementById('eMail').value;									   
+									    var username = document.getElementById('tenDn').value;
+									
+									    if(hovaten.length==0 || sdt.length==0 ||dchi.length==0 || mail.length==0 || username.length==0 ){
+									        alert('Vui lòng nhập đầy đủ thông tin đăng ký');
+									    }
+									    else if(username.length>20 || username.length<3 || password.length>15 || password.length<3)
+									    {
+									        alert('Bạn phải nhập Tên đăng nhập trong khoảng [3,20], Mật khẩu [3,15] kí tự');
+									    }
+									    
+									    
+									}
+									function checkCharacter(){
+										
+										var hovaten=document.getElementById('hoTen').value;
+									    var sdt=document.getElementById('sDt').value;
+									    var dchi=document.getElementById('DChi').value;
+									    var mail=document.getElementById('eMail').value;
+									    var mknhaplai=document.getElementById('MKnhaplai').value;
+									    var username = document.getElementById('tenDn').value;
+									    var password = document.getElementById('MK').value;
+										
+									    
+									    var vali= /[$\\\#%\^\&\*\(\)\[\]\+\{\}\`\~\=\|]/;
+									    
+										
+										if(hovaten.match(vali) || sdt.match(vali) || dchi.match(vali) || mail.match(vali) || mknhaplai.match(vali) || username.match(vali) || password.match(vali))
+										{
+										    alert('Thông tin không được chứa kí tự [$ # % ^ & * () [] {} + = ` ~ |]');
+										    $("#btnDK").attr("disabled","disabled");
+										    return false;
+										}	
+										return true;
+									}
+									function enableBtn(){
+										
+										$("#btnDK").prop('disabled', false);
+									}
+								</script>
+
 						</div>
-
-
-						<div class="modal-footer">
-							<a href="#" data-toggle="modal" data-target="#myModalQuenMK"
-								data-dismiss="modal" id="quenMK" style="margin-right: 310px;">Quên
-								mật khẩu</a>
-							<button type="button" class="btn btn-secondary"
-								onclick="validateFormDNhap()">
-								<i class="fa fa-arrow-right"></i>
-							</button>
-						</div>
-
 					</div>
 				</div>
-
-
-			</div>
-
-			<div class="modal fade" id="myModal1">
-				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content">
-
-
-						<div class="modal-header">
-							<h4 class="modal-title">Đăng Ký</h4>
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-						</div>
-
-
-						<div class="modal-body">
-							<div class="form-group">
-								<input id="hoTen" class="form-control" placeholder="Họ và tên"
-									require="">
-							</div>
-
-
-
-							<div class="form-group">
-								<input id="sDt" class="form-control" placeholder="SĐT"
-									require="">
-							</div>
-							<div class="form-group">
-								<input id="DChi" class="form-control" placeholder="Địa chỉ"
-									require="">
-							</div>
-							<div class="form-group">
-								<input id="eMail" class="form-control" placeholder="Email"
-									require="">
-							</div>
-							<div class="form-group">
-								<input id="tenDn" class="form-control"
-									placeholder="Tên đăng nhập" require="">
-							</div>
-							<div class="form-group">
-								<input type="password" id="MK" class="form-control" placeholder="Mật khẩu"
-									required="">
-							</div>
-							<div class="form-group">
-								<input type="password" id="MKnhaplai" class="form-control"
-									placeholder="Nhập lại Mật khẩu" required="">
-							</div>
-
-
-
-						</div>
-
-
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								onclick="validateFormDKy()">
-								<i class="fa fa-arrow-right"></i>
-							</button>
-						</div>
-
-					</div>
-				</div>
-			</div>
+			</form>
 
 
 			<div class="modal fade" id="myModalQuenMK">

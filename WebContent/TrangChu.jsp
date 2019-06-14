@@ -210,38 +210,55 @@
 							<div class="modal-body">
 
 								<div class="form-group">
-									<input id="hoTen" name="hoTen" class="form-control"
+									<input id="hoTen" name="hoTen" class="form-control" onchange="checkCharacter()"
 										placeholder="Họ và tên" required>
 								</div>
 
 
 
 								<div class="form-group">
-									<input id="sDt" name="sdt" class="form-control"
+									<input id="sDt" name="sdt" class="form-control" onchange="checkCharacter()"
 										placeholder="SĐT" required>
 								</div>
 								<div class="form-group">
-									<input id="DChi" name="diaChi" class="form-control"
+									<input id="DChi" name="diaChi" class="form-control" onchange="checkCharacter()"
 										placeholder="Địa chỉ" required>
 								</div>
 								<div class="form-group">
-									<input id="eMail" name="email" class="form-control"
+									<input id="eMail" name="email" class="form-control" onchange="checkCharacter()"
 										placeholder="Email" required>
 								</div>
 								<div class="form-group">
-									<input id="tenDn" name="tenDN" class="form-control"
+									<input id="tenDn" name="tenDN" class="form-control" onchange="checkCharacter()"
 										placeholder="Tên đăng nhập" required>
 								</div>
 								<div class="form-group">
-									<input type="password" id="MK" name="mK" class="form-control"
+									<input type="password" id="MK" name="mK" class="form-control" onchange="checkCharacter()"
 										placeholder="Mật khẩu" required>
 								</div>
 								<div class="form-group">
 									<input type="password" id="MKnhaplai" name="mK" class="form-control"
 									onchange="ktra()"	placeholder="Nhập lại Mật khẩu" required>
 								</div>
-								<script type="text/javascript">
+								
+
+
+							</div>
+
+
+							<div class="modal-footer">
+								<button type="submit" id="btnDK" class="btn btn-secondary">
+									<i class="fa fa-arrow-right"></i>
+								</button>
+							</div>
+							
+							<script type="text/javascript">
 									function ktra() {
+										if(checkCharacter()==true){
+											enableBtn();
+										}
+										
+										
 										var MK = document
 												.getElementById("MK").value;
 										var MKnhaplai = document
@@ -258,20 +275,40 @@
 									    if(hovaten.length==0 || sdt.length==0 ||dchi.length==0 || mail.length==0 || username.length==0 ){
 									        alert('Vui lòng nhập đầy đủ thông tin đăng ký');
 									    }
+									    else if(username.length>20 || username.length<3 || password.length>15 || password.length<3)
+									    {
+									        alert('Bạn phải nhập Tên đăng nhập trong khoảng [3,20], Mật khẩu [3,15] kí tự');
+									    }
+									    
+									    
+									}
+									function checkCharacter(){
+										
+										var hovaten=document.getElementById('hoTen').value;
+									    var sdt=document.getElementById('sDt').value;
+									    var dchi=document.getElementById('DChi').value;
+									    var mail=document.getElementById('eMail').value;
+									    var mknhaplai=document.getElementById('MKnhaplai').value;
+									    var username = document.getElementById('tenDn').value;
+									    var password = document.getElementById('MK').value;
+										
+									    
+									    var vali= /[$\\\#%\^\&\*\(\)\[\]\+\{\}\`\~\=\|]/;
+									    
+										
+										if(hovaten.match(vali) || sdt.match(vali) || dchi.match(vali) || mail.match(vali) || mknhaplai.match(vali) || username.match(vali) || password.match(vali))
+										{
+										    alert('Thông tin không được chứa kí tự [$ # % ^ & * () [] {} + = ` ~ |]');
+										    $("#btnDK").attr("disabled","disabled");
+										    return false;
+										}	
+										return true;
+									}
+									function enableBtn(){
+										
+										$("#btnDK").prop('disabled', false);
 									}
 								</script>
-
-
-							</div>
-
-
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-secondary">
-									<i class="fa fa-arrow-right"></i>
-								</button>
-
-								<!-- onclick="validateFormDKy()" -->
-							</div>
 
 						</div>
 					</div>

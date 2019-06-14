@@ -1,36 +1,34 @@
 
 function validateFormDNhap()
 {
+	var vali= /[$\\\#%\^\&\*\(\)\[\]\+\{\}\`\~\=\|]/;
+	
+	
     var username = document.getElementById('tenDN').value;
     var password = document.getElementById('mk').value; 
-    var min =3;
-    var maxDN=20;
-    var maxMK=15;
 
     if(username.length==0 && password.length==0){
         alert('Vui lòng nhập thông tin');
     }
-   
+
+    
     else if (username.length==0){
-        alert('Bạn chưa nhập tên đăng nhập');   
+        alert('Bạn chưa nhập tên đăng nhập');
+    
     }
     else if (password == '')
     {
         alert('Bạn chưa nhập mật khẩu');
     }
-    else if(username.length>maxDN || password.length>maxMK )
-    {
-        alert('Mật khẩu chứa tối đa 15 kí tự, Tên đăng nhập tối đa 20 kí tự !');
-    }
-    else if(username.length<min || password.length<min)
-    {
-        alert('Số kí tự nhập vào phải tối thiểu 3 kí tự !');
-    }
-    else{
-        
-        $('#myModal').modal('hide');
-    }
- 
+    else if(username.match(vali) || password.match(vali)){
+	    alert('Thông tin không được chứa kí tự [$ # % ^ & * () [] {} + = ` ~ |]');
+	    $("#btnLogin").attr("disabled","disabled");
+	    return false;
+    }else {
+    	$('#myModal').modal('hide');
+	}
+    return true;
+
 }
 
 
@@ -89,4 +87,25 @@ function validateQuenMK(){
     
 }
 
-
+function checkCharacter(){
+	
+	var hovaten=document.getElementById('hoTen').value;
+    var sdt=document.getElementById('sDt').value;
+    var dchi=document.getElementById('DChi').value;
+    var mail=document.getElementById('eMail').value;
+    var mknhaplai=document.getElementById('MKnhaplai').value;
+    var username = document.getElementById('tenDn').value;
+    var password = document.getElementById('MK').value;
+	
+    
+    var vali= /[$\\\#%\^\&\*\(\)\[\]\+\{\}\`\~\=\|]/;
+    
+	
+	if(hovaten.match(vali) || sdt.match(vali) || dchi.match(vali) || mail.match(vali) || mknhaplai.match(vali) || username.match(vali) || password.match(vali))
+	{
+	    alert('Thông tin không được chứa kí tự [$ # % ^ & * () [] {} + = ` ~ |]');
+	    $("#btnDK").attr("disabled","disabled");
+	    return false;
+	}	
+	return true;
+}

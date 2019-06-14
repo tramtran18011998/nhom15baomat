@@ -72,12 +72,21 @@
 							<a href="#" data-toggle="modal" data-target="#myModalQuenMK"
 								data-dismiss="modal" id="quenMK" style="margin-right: 310px;">Quên
 								mật khẩu</a>
-							<button type="submit" value="Login" class="btn btn-secondary"
-								onclick="validateFormDNhap()">
+							<button type="submit" value="Login" class="btn btn-secondary" id="btnLogin"
+								onclick="checkLogin()">
 								<i class="fa fa-arrow-right"></i>
 							</button>
 
 						</div>
+						<script type="text/javascript">
+							function checkLogin(){
+								validateFormDNhap();
+								if(validateFormDNhap()==true){
+									$("#btnLogin").prop('disabled', false);
+								}
+							
+							}
+						</script>
 						<!-- <a href="#" style="color:crimson; margin-left:80px; font-size: 20px">Quên Mật khẩu</a> -->
 					</div>
 				</form>
