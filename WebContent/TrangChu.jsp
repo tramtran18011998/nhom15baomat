@@ -233,11 +233,11 @@
 										placeholder="Tên đăng nhập" required>
 								</div>
 								<div class="form-group">
-									<input id="MK" name="mK" class="form-control"
+									<input type="password" id="MK" name="mK" class="form-control"
 										placeholder="Mật khẩu" required>
 								</div>
 								<div class="form-group">
-									<input id="MKnhaplai" name="mK" class="form-control"
+									<input type="password" id="MKnhaplai" name="mK" class="form-control"
 									onchange="ktra()"	placeholder="Nhập lại Mật khẩu" required>
 								</div>
 								<script type="text/javascript">

@@ -62,7 +62,7 @@
 		</cookie-config>
 	</session-config>
 
-	
+	<error-page><location>/oops.html</location></error-page>
 
 
 </web-app>

@@ -138,7 +138,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-lock"></i></span>
 								</div>
-								<input type="text" class="form-control" placeholder="Mật khẩu"
+								<input type="password" type="text" class="form-control" placeholder="Mật khẩu"
 									id="mk" name="password" required>
 
 							</div>
@@ -197,11 +197,11 @@
 									placeholder="Tên đăng nhập" require="">
 							</div>
 							<div class="form-group">
-								<input id="MK" class="form-control" placeholder="Mật khẩu"
+								<input type="password" id="MK" class="form-control" placeholder="Mật khẩu"
 									required="">
 							</div>
 							<div class="form-group">
-								<input id="MKnhaplai" class="form-control"
+								<input type="password" id="MKnhaplai" class="form-control"
 									placeholder="Nhập lại Mật khẩu" required="">
 							</div>
 
