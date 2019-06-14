@@ -77,7 +77,7 @@
 						<p>Bạn có muốn thoát không?</p>
 					</div>
 					<div class="modal-footer">
-						<a href="TrangChu.html" class="btn btn-primary"> Có</a>
+						<a href="TrangChu.jsp" class="btn btn-primary"> Có</a>
 						<button type=" button" class="btn btn-default"
 							data-dismiss="modal">Không</button>
 					</div>

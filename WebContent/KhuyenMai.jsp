@@ -426,7 +426,7 @@
 							<div class="card" style="margin-bottom: 20px; height: 670px;">
 
 								<img alt="Not found"
-									src="https://nhom15fastfood.herokuapp.com/LoadHinhTinKM?maTKM=${tinkm.getMaTKM() }"
+									src="https://nhom15fastfood2.herokuapp.com/LoadHinhTinKM?maTKM=${tinkm.getMaTKM() }"
 									width="489px" height="300px">
 								<h4>
 									<c:out value="${tinkm.tieuDe}" />

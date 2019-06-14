@@ -188,7 +188,7 @@
 									<td><c:out value="${SP.getGiaBan()}" /></td>
 									<td><c:out value="${SP.getKhuyenMai()}" /></td>
 									<td><img alt="Not found"
-										src="https://nhom15fastfood.herokuapp.com/LoadHinh?maSP=${SP.getMaSP() }"
+										src="https://nhom15fastfood2.herokuapp.com/LoadHinh?maSP=${SP.getMaSP() }"
 										width="100px" height="100px"></td>
 
 
