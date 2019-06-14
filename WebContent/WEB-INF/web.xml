@@ -7,13 +7,13 @@
 	<context-param>
 		<param-name>jdbcURL</param-name>
 		<!-- <param-value>jdbc:sqlserver://localhost;database=WebFastFood_DoAn;user=Tram;password=123;</param-value> -->
-		<param-value>jdbc:sqlserver://den1.mssql7.gear.host;database=nhom15;user=nhom15;password=Aa@123456;</param-value>
+		<param-value>jdbc:sqlserver://den1.mssql7.gear.host;database=baomat;user=baomat;password=Aa@123456;</param-value>
 
 
 	</context-param>
 	<context-param>
 		<param-name>jdbcUsername</param-name>
-		<param-value>nhom15</param-value>
+		<param-value>baomat</param-value>
 		<!-- <param-value>Tram</param-value> -->
 	</context-param>
 	<context-param>
